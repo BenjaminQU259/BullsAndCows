@@ -17,10 +17,17 @@ namespace BullsAndCows
 
     public string Guess(string guess)
     {
+      int countBulls = CountBulls(guess);
+
+      return $"{countBulls}A0B";
+    }
+
+    private int CountBulls(string guess)
+    {
       var guessDigits = guess.Split(" ");
       var secretDigits = secret.Split(" ");
-      var countBulls = 0;
-      for (var index = 0; index < secretDigits.Length; index++)
+      int countBulls = 0;
+      for (int index = 0; index < secretDigits.Length; index++)
       {
         if (guessDigits[index] == secretDigits[index])
         {
@@ -28,7 +35,7 @@ namespace BullsAndCows
         }
       }
 
-      return $"{countBulls}A0B";
+      return countBulls;
     }
   }
 }

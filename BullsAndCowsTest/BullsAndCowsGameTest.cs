@@ -23,7 +23,7 @@ namespace BullsAndCowsTest
       mockSecretGenerator.Setup(_ => _.GenerateSecret()).Returns("1 2 3 4");
       var game = new BullsAndCowsGame(mockSecretGenerator.Object);
       //when
-      var guessResult = game.Guess("1 2 3 4");
+      string guessResult = game.Guess("1 2 3 4");
       //then
       Assert.Equal("4A0B", guessResult);
     }
@@ -36,7 +36,7 @@ namespace BullsAndCowsTest
       mockSecretGenerator.Setup(_ => _.GenerateSecret()).Returns("1 2 3 4");
       var game = new BullsAndCowsGame(mockSecretGenerator.Object);
       //when
-      var guessResult = game.Guess("1 2 5 6");
+      string guessResult = game.Guess("1 2 5 6");
       //then
       Assert.Equal("2A0B", guessResult);
     }
