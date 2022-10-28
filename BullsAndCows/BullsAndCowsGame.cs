@@ -45,11 +45,11 @@ namespace BullsAndCows
       var guessDigits = guess.Split(" ");
       var secretDigits = secret.Split(" ");
       int countCows = 0;
-      for (int secretIndex = 0; secretIndex < secretDigits.Length; secretIndex++)
+      foreach (string secretDigit in secretDigits)
       {
         for (int guessIndex = 0; guessIndex < guessDigits.Length; guessIndex++)
         {
-          if (guessDigits[guessIndex] == secretDigits[secretIndex])
+          if (guessDigits[guessIndex] == secretDigit)
           {
             countCows++;
           }
