@@ -27,5 +27,18 @@ namespace BullsAndCowsTest
       //then
       Assert.Equal("4A0B", guessResult);
     }
+
+    [Fact]
+    public void Should_return_2A0B_when_guess_given_guess_having_only_2_digits_same_position_as_secret()
+    {
+      // given
+      var mockSecretGenerator = new Mock<SecretGenerator>();
+      mockSecretGenerator.Setup(_ => _.GenerateSecret()).Returns("1 2 3 4");
+      var game = new BullsAndCowsGame(mockSecretGenerator.Object);
+      //when
+      var guessResult = game.Guess("1 2 5 6");
+      //then
+      Assert.Equal("2A0B", guessResult);
+    }
   }
 }
