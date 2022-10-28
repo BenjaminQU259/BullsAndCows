@@ -2,11 +2,13 @@
 
 namespace BullsAndCows
 {
-    public class SecretGenerator
+  public class SecretGenerator
+  {
+    public virtual string GenerateSecret()
     {
-        public virtual string GenerateSecret()
-        {
-            throw new NotImplementedException();
-        }
+      string secret = " ";
+
+      return secret;
     }
+  }
 }
