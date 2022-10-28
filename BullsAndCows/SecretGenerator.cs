@@ -6,7 +6,7 @@ namespace BullsAndCows
   {
     public virtual string GenerateSecret()
     {
-      string secret = " ";
+      string secret = "1 1 1 1";
 
       return secret;
     }
